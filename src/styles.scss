@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: initial;
+}
+
+html, body { height: 100%; }
+
+/* FORM */
+mat-form-field {
+    &.small {width: 70px;}
+    &.large { width: 220px;}
+    height: 36px;
+    .mat-form-field-wrapper {
+        padding: 0;
+        height: 100%;
+        .mat-form-field-flex {
+            border-radius: 4px 4px 0 0;
+            padding: 0;
+            height: 100%;
+            border-radius: 100px;
+            background-color: #cacaca;
+            .mat-form-field-infix {
+                border-top: .4375em solid transparent;
+                mat-select {
+                    .mat-select-trigger {
+                        .mat-select-value {
+                            text-align: center;
+                            padding-right: 15px;;
+                        }
+                        .mat-select-arrow-wrapper {
+                            transform: translateY(-10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mat-form-field-underline {
+        display: none;
+    }
+}
+
+
+/* GLOBALS */
+h3.title {
+    color: #fff;
+    margin-bottom: 5px;;
+}

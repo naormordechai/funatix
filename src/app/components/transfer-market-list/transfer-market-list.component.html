@@ -1,0 +1,30 @@
+<ng-container *ngIf="players.length > 0; else noResult">
+    <div class="list">
+        <h3 class="list__text-sort">מיין לפי</h3>
+        <div class="list__sort">
+            <span class="list__sort__first">&nbsp;</span>
+            <div class="list__sort__second">
+                <span [ngClass]="{'active': sortBy === PlayerSortBy.popular}"
+                    (click)="onSortedClicked('popular')">פופולריות</span>
+                <span (click)="onSortedClicked('name')" [ngClass]="{'active': sortBy === PlayerSortBy.name}">שם
+                    השחקן</span>
+                <span (click)="onSortedClicked('score')"
+                    [ngClass]="{'active': sortBy === PlayerSortBy.score}">נקודות</span>
+                <span (click)="onSortedClicked('price')"
+                    [ngClass]="{'active': sortBy === PlayerSortBy.price}">מחיר</span>
+            </div>
+        </div>
+        <div class="list__wrapper">
+            <ng-container *ngFor="let player of players">
+                <app-transfer-market-row (addPlayerToTeamEvent)="addPlayerToTeam($event)" [player]="player">
+                </app-transfer-market-row>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+<ng-template #noResult>
+    <div class="no-result">
+        <h2>לא נמצאו תוצאות</h2>
+        <button mat-button (click)="clearSearch()">נקה חיפוש</button>
+    </div>
+</ng-template>  

@@ -1,0 +1,75 @@
+:host {
+    .row {
+        background-color: #bababa;  
+        display: grid;
+        padding: 0 6px;
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: 25px 50px;
+        align-items: center;
+        border-bottom: 1px solid #000;
+        img {
+            width: 50px;
+            height: 100%;
+            grid-row: 1 / -1;
+            object-fit: cover;
+        }
+
+        &__first,
+        &__second {
+            grid-column: 2 / -1;
+        }
+
+        &__first {
+            display: grid;
+            grid-template-columns: 20% 40% repeat(2, 20%);
+            border-bottom: 1px solid #fff;
+            &__role {
+                display: flex;
+                align-items: center;
+                span {
+                    height: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 60px;
+                    border-radius: 5px;
+                    &.GK { background-color: lightblue; }
+                    &.DF { background-color: green; }
+                    &.MD { background-color: orange; }
+                    &.FW { background-color: red; }
+                }
+            }
+        }
+
+        &__second {
+            display: grid;
+            grid-template-columns: 20% 40% 20% 20%;
+            align-items: center;
+            &__popular {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;  
+                    background: linear-gradient(#ddd, #aaa);
+                    color: #fff;
+                    border: 2px solid #fff;
+                }
+                &__score {
+                    font-size: 26px;
+                    font-weight: bold;
+                }
+
+                &__price {
+                        button.buy { 
+                            background: linear-gradient(rgba(29, 29, 255, 0.4), rgba(1, 1, 120, 0.762)); 
+                            color: #fff;
+                        }
+                        button.in-team {
+                            background: #ddd;
+                        }
+                    }
+        }
+    }
+}

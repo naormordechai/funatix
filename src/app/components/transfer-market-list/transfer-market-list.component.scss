@@ -1,0 +1,46 @@
+:host {
+    .list {
+        &__text-sort {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        &__sort {
+            background-color: #cacaca;
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            &__second {
+                display: grid;
+                grid-template-columns: 20% 40% repeat(2, 20%);
+                & > span { 
+                    cursor: pointer; 
+                    &.active {
+                        background-color: #eee;
+                    }
+                }
+            }
+        }  
+        
+        &__wrapper {
+            max-height: calc(100vh - 350px);
+            overflow-y: auto;
+        }
+    }
+
+    .no-result{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h2 {
+            width: 100%;
+            text-align: center;
+            background: #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: orangered;
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+}

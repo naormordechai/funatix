@@ -1,0 +1,22 @@
+<div class="row">
+    <img [src]="player.image">
+    <div class="row__first">
+        <div class="row__first__role">
+            <span class="{{PlayerRole[player.role]}}">{{PlayerRole[player.role]}}</span>
+        </div>
+        <div class="row__name">{{player.fullName}} | {{player.club}}</div>
+    </div>
+    <div class="row__second">
+        <div class="row__second__popular">{{player.popular}}%</div>
+        <div>&nbsp;</div>
+        <div class="row__second__score">{{player.score}}</div>
+        <div class="row__second__price">
+            <button class="buy" mat-button *ngIf="!player.isInTeam; else inTeam"
+                (click)="addPlayerToTeam(player)">{{player.price / 1000000}}m</button>
+            <ng-template #inTeam>
+                <button mat-button class="in-team">בהרכב</button>
+            </ng-template>
+
+        </div>
+    </div>
+</div>

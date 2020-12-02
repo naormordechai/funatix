@@ -1,0 +1,9 @@
+:host {
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        &__list { 
+            padding: 24px 12px 0; 
+        }
+    }
+}

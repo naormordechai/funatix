@@ -1,0 +1,10 @@
+<section class="container">
+    <app-user-budget [budget]="budget"></app-user-budget>
+    <app-transfer-market-filter [form]="playerForm" [clubs]="clubs | async" [millions]="millionsPrices"
+        [role]="criteria.role" (roleFilterEvent)="roleFilterChanged($event)"></app-transfer-market-filter>
+    <div class="container__list">
+        <app-transfer-market-list [sortBy]="criteria.sort?.by" [players]="players | async" (clearSearchEvent)="clearSearchHandler()"
+            (onsortedEvent)="onSortedClicked($event)" (addPlayerToTeamEvent)="addPlayerToTeam($event)">
+        </app-transfer-market-list>
+    </div>
+</section>

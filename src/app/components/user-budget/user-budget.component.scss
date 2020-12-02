@@ -1,0 +1,33 @@
+:host {
+    .budget {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border-bottom: 1px solid #fff;
+        &__box {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 90px;
+            height: 25px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 0 6px;
+            &__text {
+                color: #fff;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .circle {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        &__gold { background-color: gold; }
+        &__brown { background-color: brown; }
+        &__silver { background-color: silver; }
+    }
+}

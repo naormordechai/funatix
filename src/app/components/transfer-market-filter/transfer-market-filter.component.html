@@ -1,0 +1,53 @@
+<form class="filter" [formGroup]="form">
+    <div class="role">
+        <h3 class="title">בחר תפקיד</h3>
+        <div class="role__btns">
+            <button mat-button (click)="roleFilterChanged()" [ngClass]="{'active': role == null}">הכל</button>
+            <button mat-button [ngClass]="{'active': role === PlayerRole.GK}"
+                (click)="roleFilterChanged(PlayerRole.GK)">GK</button>
+            <button mat-button (click)="roleFilterChanged(PlayerRole.DF)"
+                [ngClass]="{'active': role === PlayerRole.DF}">DF</button>
+            <button mat-button (click)="roleFilterChanged(PlayerRole.MD)"
+                [ngClass]="{'active': role === PlayerRole.MD}">MD</button>
+            <button mat-button (click)="roleFilterChanged(PlayerRole.FW)"
+                [ngClass]="{'active': role === PlayerRole.FW}">FW</button>
+        </div>
+    </div>
+    <div class="price">
+        <h3 class="title">בחר טווח מחירים <span class="price__min-max">(Min - Max)</span></h3>
+        <div class="price__inputs">
+            <mat-form-field appearance="fill" class="small">
+                <mat-select formControlName="toPrice">
+                    <mat-option *ngFor="let num of millions" [value]="num">
+                        {{num}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="small">
+                <mat-select formControlName="fromPrice">
+                    <mat-option *ngFor="let num of millions" [value]="num">
+                        {{num}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="club">
+        <h3 class="title">בחר מועדון</h3>
+        <mat-form-field appearance="fill" class="large">
+            <mat-select formControlName="club">
+                <mat-option value="כל המועדונים">כל המועדונים</mat-option>
+                <mat-option *ngFor="let club of clubs" [value]="club">
+                    {{club}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="player">
+        <h3 class="title">שם השחקן</h3>
+        <mat-form-field appearance="fill">
+            <input matInput formControlName="term" autocomplete="off" placeholder="שם השחקן">
+        </mat-form-field>
+    </div>
+</form>
